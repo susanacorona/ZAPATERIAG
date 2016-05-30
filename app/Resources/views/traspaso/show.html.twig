@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Traspaso</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ traspaso.id }}</td>
+            </tr>
+            <tr>
+                <th>Horaentrada</th>
+                <td>{% if traspaso.horaentrada %}{{ traspaso.horaentrada|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Horasalida</th>
+                <td>{% if traspaso.horaSalida %}{{ traspaso.horaSalida|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Responsable</th>
+                <td>{{ traspaso.responsable }}</td>
+            </tr>
+            <tr>
+                <th>Observaciones</th>
+                <td>{{ traspaso.observaciones }}</td>
+            </tr>
+            <tr>
+                <th>Caracteristicas</th>
+                <td>{{ traspaso.caracteristicas }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('traspaso_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('traspaso_edit', { 'id': traspaso.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

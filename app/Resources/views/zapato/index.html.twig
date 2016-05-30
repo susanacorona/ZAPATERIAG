@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Zapato list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Tipo</th>
+                <th>Modelo</th>
+                <th>Genero</th>
+                <th>Costo</th>
+                <th>Linea</th>
+                <th>Lote</th>
+                <th>Descripcion</th>
+                <th>Material</th>
+                <th>Minimo</th>
+                <th>Maximo</th>
+                <th>Puntoreorden</th>
+                <th>Codigo</th>
+                <th>Precio</th>
+                <th>Color</th>
+                <th>Numeracion</th>
+                <th>Existencia</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zapato in zapatos %}
+            <tr>
+                <td><a href="{{ path('zapato_show', { 'id': zapato.id }) }}">{{ zapato.id }}</a></td>
+                <td>{{ zapato.marca }}</td>
+                <td>{{ zapato.tipo }}</td>
+                <td>{{ zapato.modelo }}</td>
+                <td>{{ zapato.genero }}</td>
+                <td>{{ zapato.costo }}</td>
+                <td>{{ zapato.linea }}</td>
+                <td>{{ zapato.lote }}</td>
+                <td>{{ zapato.descripcion }}</td>
+                <td>{{ zapato.material }}</td>
+                <td>{{ zapato.minimo }}</td>
+                <td>{{ zapato.maximo }}</td>
+                <td>{{ zapato.puntoReorden }}</td>
+                <td>{{ zapato.codigo }}</td>
+                <td>{{ zapato.precio }}</td>
+                <td>{{ zapato.color }}</td>
+                <td>{{ zapato.numeracion }}</td>
+                <td>{{ zapato.existencia }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('zapato_show', { 'id': zapato.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('zapato_edit', { 'id': zapato.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('zapato_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

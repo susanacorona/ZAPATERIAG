@@ -1,0 +1,562 @@
+<?php
+
+namespace InventarioBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Zapato
+ *
+ * @ORM\Table(name="zapato")
+ * @ORM\Entity(repositoryClass="InventarioBundle\Repository\ZapatoRepository")
+ */
+class Zapato
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marca", type="string", length=255)
+     */
+    private $marca;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo", type="string", length=50)
+     */
+    private $tipo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="modelo", type="string", length=100)
+     */
+    private $modelo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="genero", type="string", length=50)
+     */
+    private $genero;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="costo", type="float")
+     */
+    private $costo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="linea", type="string", length=100)
+     */
+    private $linea;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lote", type="string", length=50)
+     */
+    private $lote;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="string", length=255)
+     */
+    private $descripcion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="material", type="string", length=255)
+     */
+    private $material;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="minimo", type="integer")
+     */
+    private $minimo;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="maximo", type="integer")
+     */
+    private $maximo;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="puntoReorden", type="integer")
+     */
+    private $puntoReorden;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codigo", type="string", length=30)
+     */
+    private $codigo;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="precio", type="float")
+     */
+    private $precio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color", type="string", length=255)
+     */
+    private $color;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="numeracion", type="float")
+     */
+    private $numeracion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="existencia", type="integer")
+     */
+    private $existencia;
+    
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set marca
+     *
+     * @param string $marca
+     *
+     * @return Zapato
+     */
+    public function setMarca($marca)
+    {
+        $this->marca = $marca;
+
+        return $this;
+    }
+
+    /**
+     * Get marca
+     *
+     * @return string
+     */
+    public function getMarca()
+    {
+        return $this->marca;
+    }
+
+    /**
+     * Set tipo
+     *
+     * @param string $tipo
+     *
+     * @return Zapato
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
+
+        return $this;
+    }
+
+    /**
+     * Get tipo
+     *
+     * @return string
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * Set modelo
+     *
+     * @param string $modelo
+     *
+     * @return Zapato
+     */
+    public function setModelo($modelo)
+    {
+        $this->modelo = $modelo;
+
+        return $this;
+    }
+
+    /**
+     * Get modelo
+     *
+     * @return string
+     */
+    public function getModelo()
+    {
+        return $this->modelo;
+    }
+
+    /**
+     * Set genero
+     *
+     * @param string $genero
+     *
+     * @return Zapato
+     */
+    public function setGenero($genero)
+    {
+        $this->genero = $genero;
+
+        return $this;
+    }
+
+    /**
+     * Get genero
+     *
+     * @return string
+     */
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    /**
+     * Set costo
+     *
+     * @param float $costo
+     *
+     * @return Zapato
+     */
+    public function setCosto($costo)
+    {
+        $this->costo = $costo;
+
+        return $this;
+    }
+
+    /**
+     * Get costo
+     *
+     * @return float
+     */
+    public function getCosto()
+    {
+        return $this->costo;
+    }
+
+    /**
+     * Set linea
+     *
+     * @param string $linea
+     *
+     * @return Zapato
+     */
+    public function setLinea($linea)
+    {
+        $this->linea = $linea;
+
+        return $this;
+    }
+
+    /**
+     * Get linea
+     *
+     * @return string
+     */
+    public function getLinea()
+    {
+        return $this->linea;
+    }
+
+    /**
+     * Set lote
+     *
+     * @param string $lote
+     *
+     * @return Zapato
+     */
+    public function setLote($lote)
+    {
+        $this->lote = $lote;
+
+        return $this;
+    }
+
+    /**
+     * Get lote
+     *
+     * @return string
+     */
+    public function getLote()
+    {
+        return $this->lote;
+    }
+
+    /**
+     * Set descripcion
+     *
+     * @param string $descripcion
+     *
+     * @return Zapato
+     */
+    public function setDescripcion($descripcion)
+    {
+        $this->descripcion = $descripcion;
+
+        return $this;
+    }
+
+    /**
+     * Get descripcion
+     *
+     * @return string
+     */
+    public function getDescripcion()
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * Set material
+     *
+     * @param string $material
+     *
+     * @return Zapato
+     */
+    public function setMaterial($material)
+    {
+        $this->material = $material;
+
+        return $this;
+    }
+
+    /**
+     * Get material
+     *
+     * @return string
+     */
+    public function getMaterial()
+    {
+        return $this->material;
+    }
+
+    /**
+     * Set minimo
+     *
+     * @param integer $minimo
+     *
+     * @return Zapato
+     */
+    public function setMinimo($minimo)
+    {
+        $this->minimo = $minimo;
+
+        return $this;
+    }
+
+    /**
+     * Get minimo
+     *
+     * @return int
+     */
+    public function getMinimo()
+    {
+        return $this->minimo;
+    }
+
+    /**
+     * Set maximo
+     *
+     * @param integer $maximo
+     *
+     * @return Zapato
+     */
+    public function setMaximo($maximo)
+    {
+        $this->maximo = $maximo;
+
+        return $this;
+    }
+
+    /**
+     * Get maximo
+     *
+     * @return int
+     */
+    public function getMaximo()
+    {
+        return $this->maximo;
+    }
+
+    /**
+     * Set puntoReorden
+     *
+     * @param integer $puntoReorden
+     *
+     * @return Zapato
+     */
+    public function setPuntoReorden($puntoReorden)
+    {
+        $this->puntoReorden = $puntoReorden;
+
+        return $this;
+    }
+
+    /**
+     * Get puntoReorden
+     *
+     * @return int
+     */
+    public function getPuntoReorden()
+    {
+        return $this->puntoReorden;
+    }
+
+    /**
+     * Set codigo
+     *
+     * @param string $codigo
+     *
+     * @return Zapato
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    /**
+     * Get codigo
+     *
+     * @return string
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * Set precio
+     *
+     * @param float $precio
+     *
+     * @return Zapato
+     */
+    public function setPrecio($precio)
+    {
+        $this->precio = $precio;
+
+        return $this;
+    }
+
+    /**
+     * Get precio
+     *
+     * @return float
+     */
+    public function getPrecio()
+    {
+        return $this->precio;
+    }
+
+    /**
+     * Set color
+     *
+     * @param string $color
+     *
+     * @return Zapato
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set numeracion
+     *
+     * @param float $numeracion
+     *
+     * @return Zapato
+     */
+    public function setNumeracion($numeracion)
+    {
+        $this->numeracion = $numeracion;
+
+        return $this;
+    }
+
+    /**
+     * Get numeracion
+     *
+     * @return float
+     */
+    public function getNumeracion()
+    {
+        return $this->numeracion;
+    }
+
+    /**
+     * Set existencia
+     *
+     * @param string $existencia
+     *
+     * @return Zapato
+     */
+    public function setExistencia($existencia)
+    {
+        $this->existencia = $existencia;
+
+        return $this;
+    }
+
+    /**
+     * Get existencia
+     *
+     * @return string
+     */
+    public function getExistencia()
+    {
+        return $this->existencia;
+    }
+}
+

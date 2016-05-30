@@ -1,0 +1,27 @@
+inventario_traspaso:
+    resource: "@InventarioBundle/Controller/TraspasoController.php"
+    type:     annotation
+
+inventario_salida:
+    resource: "@InventarioBundle/Controller/SalidaController.php"
+    type:     annotation
+
+inventario_entrada:
+    resource: "@InventarioBundle/Controller/EntradaController.php"
+    type:     annotation
+
+inventario_almacen:
+    resource: "@InventarioBundle/Controller/AlmacenController.php"
+    type:     annotation
+
+inventario_zapato:
+    resource: "@InventarioBundle/Controller/ZapatoController.php"
+    type:     annotation
+
+inventario:
+    resource: "@InventarioBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

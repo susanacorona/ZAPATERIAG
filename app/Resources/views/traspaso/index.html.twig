@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Traspaso list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Horaentrada</th>
+                <th>Horasalida</th>
+                <th>Responsable</th>
+                <th>Observaciones</th>
+                <th>Caracteristicas</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for traspaso in traspasos %}
+            <tr>
+                <td><a href="{{ path('traspaso_show', { 'id': traspaso.id }) }}">{{ traspaso.id }}</a></td>
+                <td>{% if traspaso.horaentrada %}{{ traspaso.horaentrada|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if traspaso.horaSalida %}{{ traspaso.horaSalida|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ traspaso.responsable }}</td>
+                <td>{{ traspaso.observaciones }}</td>
+                <td>{{ traspaso.caracteristicas }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('traspaso_show', { 'id': traspaso.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('traspaso_edit', { 'id': traspaso.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('traspaso_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

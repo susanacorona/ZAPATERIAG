@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Almacen list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Capacidad</th>
+                <th>Metroscuadrados</th>
+                <th>Pisos</th>
+                <th>Nombre</th>
+                <th>Reponsable</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for almacen in almacens %}
+            <tr>
+                <td><a href="{{ path('almacen_show', { 'id': almacen.id }) }}">{{ almacen.id }}</a></td>
+                <td>{{ almacen.capacidad }}</td>
+                <td>{{ almacen.metrosCuadrados }}</td>
+                <td>{{ almacen.pisos }}</td>
+                <td>{{ almacen.nombre }}</td>
+                <td>{{ almacen.reponsable }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('almacen_show', { 'id': almacen.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('almacen_edit', { 'id': almacen.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('almacen_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

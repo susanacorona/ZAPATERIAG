@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Almacen</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ almacen.id }}</td>
+            </tr>
+            <tr>
+                <th>Capacidad</th>
+                <td>{{ almacen.capacidad }}</td>
+            </tr>
+            <tr>
+                <th>Metroscuadrados</th>
+                <td>{{ almacen.metrosCuadrados }}</td>
+            </tr>
+            <tr>
+                <th>Pisos</th>
+                <td>{{ almacen.pisos }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ almacen.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Reponsable</th>
+                <td>{{ almacen.reponsable }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('almacen_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('almacen_edit', { 'id': almacen.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
