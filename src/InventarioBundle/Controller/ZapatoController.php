@@ -8,11 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use InventarioBundle\Entity\Zapato;
 use InventarioBundle\Form\ZapatoType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Zapato controller.
  *
  * @Route("/zapato")
+ * @Security("has_role('ROLE_ADMIN')")
  */
 class ZapatoController extends Controller
 {
