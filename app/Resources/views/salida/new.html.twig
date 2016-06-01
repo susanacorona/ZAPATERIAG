@@ -7,7 +7,7 @@
     <script src="{{ asset('bundles/inventario/js/jquery-2.1.4.js') }}"></script>
     <script>
         // setup an "add a tag" link
-        var $addTagLink = $('<a href="#" class="add_detalle_link">Add a tag</a>');
+        var $addTagLink = $('<a href="#" class="add_detalle_link">Nuevo detalle</a>');
         var $newLinkLi = $('<li></li>').append($addTagLink);
 
         jQuery(document).ready(function() {
@@ -49,7 +49,7 @@
             var $newFormLi = $('<li></li>').append(newForm);
 
             // also add a remove button, just for this example
-            $newFormLi.append('<a href="#" class="remove-detalle">x</a>');
+            $newFormLi.append('<a href="#" class="remove-detalle">Eliminar detalle</a>');
             $newLinkLi.before($newFormLi);
 
             // handle the removal, just for this example
@@ -63,7 +63,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Salida creation</h1>
+    <h1>Nueva Salida</h1>
 
     {{ form_start(form) }}
          {{ form_row(form.tipoSalida) }}
@@ -71,7 +71,7 @@
         {{ form_row(form.autorizacion) }}
         {{ form_row(form.encargado) }}
         {{ form_row(form.fecha) }}
-        <h3>Detalles</h3>
+        <h3>Detalle salida</h3>
 
         <ul class="detalles" data-prototype="{{ form_widget(form.detalles.vars.prototype)|e }}">
             {# iterate over each existing detalle and render its#}
@@ -83,10 +83,10 @@
         </ul>
         <ul>
             <li>
-                <a href="{{ path('salida_index') }}">Back to the list</a>
+                <a href="{{ path('salida_index') }}">Salida principal</a>
             </li>
         </ul>
-        <input type="submit" value="Create" />
+        <input type="submit" value="Guardar registro" />
     {{ form_end(form) }}
 
   

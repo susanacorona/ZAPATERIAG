@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Salida list</h1>
+    <h1>Salidas Registradas</h1>
 
     <table>
         <thead>
@@ -27,10 +27,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('salida_show', { 'id': salida.id }) }}">show</a>
+                            <a href="{{ path('salida_show', { 'id': salida.id }) }}">Mas información</a>
                         </li>
                         <li>
-                            <a href="{{ path('salida_edit', { 'id': salida.id }) }}">edit</a>
+                            <a href="{{ path('salida_edit', { 'id': salida.id }) }}">Editar salida</a>
                         </li>
                     </ul>
                 </td>
@@ -41,7 +41,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('salida_new') }}">Create a new entry</a>
+            <a href="{{ path('salida_new') }}">Nueva salida</a>
+        </li>
+        <li>
+            <a href="{{ path('homepage') }}">Menu principal</a>
         </li>
     </ul>
 {% endblock %}

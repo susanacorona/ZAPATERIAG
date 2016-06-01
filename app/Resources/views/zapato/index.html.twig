@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Zapato list</h1>
+    <h1>Zapatos Registrados</h1>
 
     <table>
         <thead>
@@ -51,10 +51,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('zapato_show', { 'id': zapato.id }) }}">show</a>
+                            <a href="{{ path('zapato_show', { 'id': zapato.id }) }}">Mas información</a>
                         </li>
                         <li>
-                            <a href="{{ path('zapato_edit', { 'id': zapato.id }) }}">edit</a>
+                            <a href="{{ path('zapato_edit', { 'id': zapato.id }) }}">Editar registro</a>
                         </li>
                     </ul>
                 </td>
@@ -65,7 +65,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('zapato_new') }}">Create a new entry</a>
+            <a href="{{ path('zapato_new') }}">Nuevo zapato</a>
+        </li>
+        <li>
+            <a href="{{ path('homepage') }}">Menu principal</a>
         </li>
     </ul>
 {% endblock %}

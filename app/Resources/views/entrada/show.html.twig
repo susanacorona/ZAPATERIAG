@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Entrada</h1>
+    <h1>Registro Completo</h1>
 
     <table>
         <tbody>
@@ -34,14 +34,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('entrada_index') }}">Back to the list</a>
+            <a href="{{ path('entrada_index') }}">Entrada principal</a>
         </li>
         <li>
-            <a href="{{ path('entrada_edit', { 'id': entrada.id }) }}">Edit</a>
+            <a href="{{ path('entrada_edit', { 'id': entrada.id }) }}">Editar registro</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Eliminar registro">
             {{ form_end(delete_form) }}
         </li>
     </ul>

@@ -1,7 +1,3 @@
-inventario_security:
-    resource: "@InventarioBundle/Controller/SecurityController.php"
-    type:     annotation
-
 inventario_traspaso:
     resource: "@InventarioBundle/Controller/TraspasoController.php"
     type:     annotation

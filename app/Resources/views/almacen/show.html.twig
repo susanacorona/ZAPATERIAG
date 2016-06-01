@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Almacen</h1>
+    <h1>Registro completo</h1>
 
     <table>
         <tbody>
@@ -34,14 +34,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('almacen_index') }}">Back to the list</a>
+            <a href="{{ path('almacen_index') }}">Almacen principal</a>
         </li>
         <li>
-            <a href="{{ path('almacen_edit', { 'id': almacen.id }) }}">Edit</a>
+            <a href="{{ path('almacen_edit', { 'id': almacen.id }) }}">Editar registro</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Eliminar registro">
             {{ form_end(delete_form) }}
         </li>
     </ul>
