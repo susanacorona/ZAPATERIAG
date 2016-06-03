@@ -82,6 +82,53 @@
                 {{ form_row(detalle.lote) }}
                 {{ form_row(detalle.costo) }}</li>
             {% endfor %}
+        
+    
+            <h1>Zapatos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Marca</th>
+                <th>Tipo</th>
+                <th>Modelo</th>
+                <th>Genero</th>
+                <th>Costo</th>
+                <th>Linea</th>
+                <th>Material</th>
+                <th>Color</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zapatoc in zapatos %}
+            <tr>
+                <td>{{ zapatoc.codigo }}</td>
+                <td>{{ zapatoc.marca }}</td>
+                <td>{{ zapatoc.tipo }}</td>
+                <td>{{ zapatoc.modelo }}</td>
+                <td>{{ zapatoc.genero }}</td>
+                <td>{{ zapatoc.costo }}</td>
+                <td>{{ zapatoc.linea }}</td>
+                <td>{{ zapatoc.material }}</td>
+                <td>{{ zapatoc.color }}</td>
+                <td>{{ zapatoc.precio }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+                {{ zapato.codigo }}
+                {{ zapato.marca }}
+                {{ zapato.tipo }}
+                {{ zapato.modelo }}
+                {{ zapato.genero }}
+                {{ zapato.costo }}
+                {{ zapato.linea }}
+                {{ zapato.material }}
+                {{ zapato.color }}
+                {{ zapato.precio }}
         </ul>
         <ul>
             <li>
@@ -90,4 +137,6 @@
         </ul>
         <input type="submit" value="Guardar registro" />
     {{ form_end(form) }}
+
+
 {% endblock %}

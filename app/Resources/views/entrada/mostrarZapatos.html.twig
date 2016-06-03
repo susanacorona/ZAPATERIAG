@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Zapatos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Marca</th>
+                <th>Tipo</th>
+                <th>Modelo</th>
+                <th>Genero</th>
+                <th>Costo</th>
+                <th>Linea</th>
+                <th>Material</th>
+                <th>Color</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zapato in zapatos %}
+            <tr>
+                <td>{{ zapato.codigo }}</td>
+                <td>{{ zapato.marca }}</td>
+                <td>{{ zapato.tipo }}</td>
+                <td>{{ zapato.modelo }}</td>
+                <td>{{ zapato.genero }}</td>
+                <td>{{ zapato.costo }}</td>
+                <td>{{ zapato.linea }}</td>
+                <td>{{ zapato.material }}</td>
+                <td>{{ zapato.color }}</td>
+                <td>{{ zapato.precio }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

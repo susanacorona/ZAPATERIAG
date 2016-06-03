@@ -44,7 +44,11 @@ class EntradaController extends Controller
         $entrada = new Entrada();
         $form = $this->createForm('InventarioBundle\Form\EntradaType', $entrada);
         $form->handleRequest($request);
-
+        
+         $zapatos = $this->getDoctrine()->getRepository('InventarioBundle:Zapato')->findAll();
+        
+        $zapato = $this->getDoctrine()->getRepository('InventarioBundle:Zapato')->findOneByCodigo('1234');
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entrada);
@@ -55,6 +59,8 @@ class EntradaController extends Controller
 
         return $this->render('entrada/new.html.twig', array(
             'entrada' => $entrada,
+            'zapatos' => $zapatos,
+            'zapato' => $zapato,
             'form' => $form->createView(),
         ));
     }
@@ -137,4 +143,5 @@ class EntradaController extends Controller
             ->getForm()
         ;
     }
+        
 }
