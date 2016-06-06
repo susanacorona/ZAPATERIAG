@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Zapatos</h1>
+
+    <table>
+        <thead>
+           <tr>
+                <th>Capacidad</th>
+                <th>Metroscuadrados</th>
+                <th>Pisos</th>
+                <th>Nombre</th>
+                <th>Responsable</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salida in salidas %}
+            <tr>
+                <td>{{ almacen.capacidad }}</td>
+                <td>{{ almacen.metrosCuadrados }}</td>
+                <td>{{ almacen.pisos }}</td>
+                <td>{{ almacen.nombre }}</td>
+                <td>{{ almacen.responsable}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Zapatos</h1>
+
+    <table>
+        <thead>
+           <tr>
+                <th>Tiposalida</th>
+                <th>Referencia</th>
+                <th>Autorizacion</th>
+                <th>Encargado</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salida in salidas %}
+            <tr>
+                <td>{{ salida.tipoSalida }}</td>
+                <td>{{ salida.referencia }}</td>
+                <td>{{ salida.autorizacion }}</td>
+                <td>{{ salida.encargado }}</td>
+                <td>{{ salida.fecha|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

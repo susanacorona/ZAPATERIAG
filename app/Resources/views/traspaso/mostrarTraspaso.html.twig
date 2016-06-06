@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Zapatos</h1>
+
+    <table>
+        <thead>
+           <tr>
+                <th>Horaentrada</th>
+                <th>Horasalida</th>
+                <th>Responsable</th>
+                <th>Observaciones</th>
+                <th>Caracteristicas</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salida in salidas %}
+            <tr>
+                <td>{{ traspaso.horaEntrada }}</td>
+                <td>{{ traspaso.horaSalida }}</td>
+                <td>{{ traspaso.responsable }}</td>
+                <td>{{ traspaso.observaciones }}</td>
+                <td>{{ traspaso.caracteristicas }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
