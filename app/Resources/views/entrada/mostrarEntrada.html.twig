@@ -16,11 +16,11 @@
         <tbody>
         {% for salida in salidas %}
             <tr>
-                <td>{{ salida.tipoEntrada }}</td>
-                <td>{{ salida.referencia }}</td>
-                <td>{{ salida.autorizacion }}</td>
-                <td>{{ salida.encargado }}</td>
-                <td>{{ salida.fecha|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entrada.tipoEntrada }}</td>
+                <td>{{ entrada.referencia }}</td>
+                <td>{{ entrada.autorizacion }}</td>
+                <td>{{ entrada.encargado }}</td>
+                <td>{{ entrada.fecha|date('Y-m-d H:i:s') }}</td>
             </tr>
         {% endfor %}
         </tbody>
